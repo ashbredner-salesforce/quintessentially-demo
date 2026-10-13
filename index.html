@@ -8,72 +8,169 @@
   <style>
     body { padding-top: 64px; }
 
-    /* GIFTING CAROUSEL SECTION */
-    .gifting-section {
+    /* ── HERO ── */
+    .home-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: var(--paper);
-      min-height: 480px;
+      min-height: 520px;
+      background: var(--black);
+      overflow: hidden;
     }
-    .gifting-body {
-      padding: 4rem;
+    .home-hero-text {
+      padding: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .gifting-body h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-      margin-bottom: 1rem;
+    .home-hero-text h1 {
+      color: #fff;
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      margin-bottom: 1.4rem;
+      line-height: 1.15;
     }
-    .gifting-body p {
-      color: var(--grey);
+    .home-hero-text h1 em { font-style: italic; color: rgba(255,255,255,0.85); }
+    .home-hero-text p {
+      color: rgba(255,255,255,0.55);
       font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      max-width: 440px;
+      line-height: 1.85;
+      max-width: 420px;
+      margin-bottom: 2.4rem;
     }
-    .gifting-carousel {
-      position: relative;
-      background: var(--black);
+    .home-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .home-hero-img { overflow: hidden; }
+    .home-hero-img img { width: 100%; height: 100%; object-fit: cover; min-height: 520px; display: block; }
+
+    /* ── MEMBERSHIP CARDS ── */
+    .membership-cards { padding: 0; background: var(--paper); }
+    .membership-cards-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
-    .gifting-carousel-img {
-      overflow: hidden;
-      height: 240px;
-    }
-    .gifting-carousel-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .carousel-nav {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
+    .mem-card { background: #fff; overflow: hidden; }
+    .mem-card-img { overflow: hidden; }
+    .mem-card-img img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.5s; }
+    .mem-card:hover .mem-card-img img { transform: scale(1.04); }
+    .mem-card-body { padding: 1.6rem 1.8rem 2rem; }
+    .mem-card-body h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+    .mem-card-body p { font-size: 13px; color: var(--grey); line-height: 1.7; margin-bottom: 1.2rem; }
+
+    /* ── SERVICES SECTION ── */
+    .services-section { padding: 2.5rem 2.5rem 3rem; background: var(--paper); }
+    .services-section-header {
       display: flex;
-      gap: 0.5rem;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #D8D3CB;
     }
-    .carousel-nav button {
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.4);
-      color: var(--white);
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.2s;
+    .services-section-header h2 { font-size: 1.25rem; font-family: Georgia, serif; margin: 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
-    .carousel-nav button:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+    .svc-card { background: #fff; overflow: hidden; }
+    .svc-card-img { overflow: hidden; }
+    .svc-card-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s; }
+    .svc-card:hover .svc-card-img img { transform: scale(1.04); }
+    .svc-card-body { padding: 1.4rem 1.6rem 1.8rem; }
+    .svc-card-body h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .svc-card-body p { font-size: 13px; color: var(--grey); line-height: 1.7; margin-bottom: 1.1rem; }
+
+    /* ── TESTIMONIAL ── */
+    .home-testimonial {
+      background: var(--black);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .home-testimonial .testi-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+    .home-testimonial blockquote {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      line-height: 1.9;
+    }
+    .testi-dots { display: flex; justify-content: center; gap: 6px; }
+    .testi-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); display: block; }
+    .testi-dots span.active { background: var(--gold); }
+
+    /* ── ENQUIRY FORM ── */
+    .enquiry-section {
+      background: #f0ece6;
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .enquiry-section h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .enquiry-section > p { color: var(--grey); font-size: 14px; margin-bottom: 0.2rem; }
+    .enquiry-link { color: var(--grey); font-size: 13px; text-decoration: underline; }
+    .enquiry-form { max-width: 680px; margin: 2.5rem auto 0; text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-row.single { grid-template-columns: 1fr; }
+    .form-row.three { grid-template-columns: 1fr 2fr; }
+    .form-field { display: flex; flex-direction: column; gap: 0; }
+    .form-field label { font-size: 11px; color: var(--grey); letter-spacing: 0.05em; margin-bottom: 4px; }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: inherit; font-size: 13px; color: var(--black);
+      border: none; border-bottom: 1px solid #bbb; background: transparent;
+      padding: 8px 0; outline: none; transition: border-color 0.2s;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-bottom-color: var(--gold); }
+    .form-field textarea { resize: vertical; min-height: 80px; }
+    .form-checkbox { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.7rem; }
+    .form-checkbox input { margin-top: 3px; flex-shrink: 0; accent-color: var(--gold); }
+    .form-checkbox label { font-size: 12px; color: var(--grey); line-height: 1.6; }
+    .form-checkbox label a { text-decoration: underline; }
+    .required-note { font-size: 11px; color: var(--grey); margin-top: 0.5rem; text-align: left; }
+    .form-submit { text-align: center; margin-top: 1.8rem; }
+    .form-submit button {
+      font-family: inherit; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--black); color: #fff; border: none; padding: 13px 40px;
+      border-radius: 40px; cursor: pointer; transition: background 0.2s;
+    }
+    .form-submit button:hover { background: var(--gold); }
+
+    @media (max-width: 900px) {
+      .home-hero { grid-template-columns: 1fr; }
+      .home-hero-img { display: none; }
+      .home-hero-text { padding: 3rem 2rem; }
+      .membership-cards-grid, .services-grid { grid-template-columns: 1fr 1fr; }
+      .form-row, .form-row.three { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .membership-cards-grid, .services-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
+<!-- NAV with real Quintessentially logo -->
 <nav>
   <div class="nav-logo">
     <div class="nav-logo-mark">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 329.47582 329.48272" width="30" height="30" style="display:block">
+        <path fill="#C4A96B" d="M164.74136,329.48272c-42.81453,0-81.46634-26.77116-96.81938-66.8209C27.20607,247.60563,0,208.512,0,164.74136S27.20607,81.87709,67.92198,66.8209C83.27502,26.77116,121.92683,0,164.74136,0s81.45944,26.77116,96.81247,66.8209c40.71591,15.05619,67.92198,54.14982,67.92198,97.92046s-27.20607,82.86427-67.92198,97.92046c-15.35303,40.04974-53.99794,66.8209-96.81247,66.8209Zm0-320.99851c-39.92203,0-75.90915,25.35943-89.54325,63.1069l-.69033,1.89842-1.90532,.66617C34.24748,87.49641,8.4773,123.90119,8.4773,164.74136s25.77018,77.24495,64.12515,90.58566l1.90532,.66617,.69033,1.89842c13.6341,37.74748,49.62122,63.1069,89.54325,63.1069,39.91513,0,75.90225-25.35943,89.53635-63.1069l.69033-1.89842,1.90532-.66617c38.35497-13.34071,64.12515-49.74548,64.12515-90.58566s-25.77018-77.24495-64.12515-90.58566l-1.90532-.66617-.69033-1.89842c-13.6341-37.74748-49.62122-63.1069-89.53635-63.1069Z"/>
+        <path fill="#C4A96B" d="M241.02651,207.37191c23.18372-2.1106,40.32776-22.69,38.21716-45.87366-1.39172-15.28613-10.82678-27.91522-23.7301-34.15894-.76685,2.73291-1.64673,5.41693-2.64697,8.04364,9.82483,5.159,16.93335,15.02728,18.01196,26.87683,1.69067,18.57159-12.04309,35.05634-30.61353,36.74701-2.76465,.25165-5.47656,.14325-8.10437-.25574-1.22937,2.67615-2.61414,5.26959-4.16382,7.75647,4.17151,.93732,8.54724,1.27246,13.02966,.86438Z"/>
+        <path fill="#C4A96B" d="M304.34292,165.39621c0-29.41296-18.28394-54.89813-45.32056-64.62946,.00342,.32843,.02478,.65228,.02478,.98157,0,2.65375-.13721,5.27411-.35168,7.8725,22.33423,9.18292,37.24768,30.88055,37.24768,55.77539,0,27.95282-19.09485,51.52295-44.92322,58.37079-4.38904,1.1272-8.80371,1.69769-13.19739,1.69769-9.61694,0-19.02411-2.84625-27.30402-7.67273-3.32648-1.93909-6.48584-4.17548-9.41669-6.67303,11.94629-10.26074,19.53589-25.45819,19.53589-42.40289,0-30.82343-25.07983-55.90326-55.90326-55.90326s-55.89636,25.07983-55.89636,55.90326,25.07294,55.90326,55.89636,55.90326c10.69604,0,20.69708-3.02502,29.2019-8.25708,.74408,.60352,1.38104,1.1228,1.68573,1.37976,1.98993,1.67834,4.05762,3.26501,6.20123,4.74219,4.07672,2.8092,8.43158,5.2226,13.01166,7.10797,3.33453,1.37274,6.78564,2.46417,10.30939,3.23248,.84827,.18494,10.41437,1.6087,10.41437,1.35693,.33276,0,.66052-.02051,.99219-.02521,.31567,.00525,.63037,.02521,.94629,.02521,8.25732,0,16.61206-1.7384,24.8313-5.16675,2.31812-.96619,4.54492-2.12,6.72021-3.3645-.04565-.04205-.0946-.08069-.14038-.12262,21.11304-11.75684,35.43457-34.29834,35.43457-60.13147Zm-187.02753,3.31982c0-26.14642,21.27612-47.41907,47.41907-47.41907,26.14984,0,47.42596,21.27264,47.42596,47.41907,0,14.63745-6.6709,27.74426-17.12915,36.44958-.04785-.05444-.09888-.10602-.14655-.16064-3.72974-4.27582-7.45947-8.55157-11.18921-12.82739-1.99207-2.28369-3.98407-4.56738-5.97614-6.85101l-11.65369,.60144c2.23389,2.54968,4.46777,5.0993,6.70166,7.64899,4.03082,4.60065,8.06165,9.20129,12.09253,13.80194,.86224,.98413,1.72449,1.96832,2.58673,2.95245-6.74927,3.69733-14.48889,5.80371-22.71216,5.80371-26.14294,0-47.41907-21.27264-47.41907-47.41907Z"/>
+        <path fill="#C4A96B" d="M96.43165,122.24131c-23.27961,0-42.21875,18.94031-42.21875,42.21992,0,16.30472,9.30683,30.45195,22.87195,37.48264,.87199-2.69521,1.85823-5.33828,2.96752-7.91733-10.38799-5.77845-17.43978-16.85914-17.43978-29.56531,0-18.64853,15.1717-33.82023,33.81906-33.82023,1.83406,0,3.61422,.20361,5.3667,.49188,1.56645-2.61758,3.299-5.12164,5.16953-7.51422-3.37121-.87799-6.89271-1.37734-10.53623-1.37734Z"/>
+        <path fill="#C4A96B" d="M35.0101,165.35006c0-35.81117,29.13408-64.94525,64.94525-64.94525,9.47294,0,18.45415,2.07956,26.5726,5.7452,2.93412-1.79569,6.00666-3.38557,9.19375-4.76101-10.58984-5.95115-22.77586-9.38388-35.76635-9.38388-40.44225,0-73.34494,32.90269-73.34494,73.34494,0,30.8243,19.12341,57.24983,46.12124,68.08459-.04014-1.11178-.08466-2.22267-.08466-3.34426,0-1.93191,.08012-3.84434,.19833-5.74652-22.30757-10.29249-37.83522-32.85699-37.83522-58.99381Z"/>
+        <path fill="#C4A96B" d="M207.46694,95.33356c-.88415-23.26276-20.5302-41.46878-43.7931-40.58463-16.29285,.61931-30.07638,10.45684-36.58678,24.27932,2.72641,.76887,5.40507,1.65404,8.02441,2.6646,5.37959-10.59995,16.18446-18.06759,28.8814-18.55024,18.6352-.70837,34.37216,13.8761,35.08054,32.50998,.10385,2.73022-.14516,5.38911-.66472,7.95425,2.61201,1.35361,5.13892,2.84696,7.55553,4.49383,1.11925-4.05805,1.67089-8.34095,1.50273-12.7671Z"/>
+        <path fill="#C4A96B" d="M162.05627,35.59374c35.78539-1.3602,66.00502,26.64613,67.36537,62.43152,.37601,9.89348-1.52997,19.34035-5.18975,27.88739,1.9407,2.69258,3.70724,5.51728,5.27412,8.46663,5.73641-10.94461,8.81129-23.46227,8.30916-36.67305-1.53612-40.4131-35.66484-72.0423-76.07794-70.50603-30.80203,1.17081-56.48213,21.28427-66.28363,48.67407,1.10943-.08232,2.21784-.16904,3.33869-.21166,1.93045-.07339,3.84463-.06592,5.74988-.02007,9.43778-22.68241,31.39615-39.05597,57.51408-40.04881Z"/>
+        <path fill="#C4A96B" d="M123.60818,238.73865c3.23279,23.05403,24.61974,39.17931,47.67377,35.94652,15.7582-2.20978,28.22957-12.92223,33.54265-26.83069-2.03855-.72785-7.24089-2.69697-7.85215-2.8641-4.27982,11.08977-14.27393,19.61207-26.85691,21.37655-18.46792,2.58975-35.59951-10.32808-38.18897-28.79483-.16215-1.15601-.22587-2.30133-.26498-3.4424-2.87143-1.45483-5.63885-3.08265-8.27753-4.88903-.27626,3.10404-.2269,6.28131,.22411,9.49799Z"/>
+        <path fill="#C4A96B" d="M226.37605,252.59556c-8.23109,21.26464-27.40753,37.59792-51.54711,40.9829-35.46431,4.97311-68.36187-19.83281-73.33498-55.29697-1.39214-9.92746-.41688-19.63829,2.44151-28.60455-.76301-1.13038-1.48603-2.28947-2.18649-3.46364-1.25694-1.70003-2.46612-3.43947-3.56852-5.26006-4.95216,11.76343-6.90267,24.96045-5.00475,38.49467,5.61615,40.05042,42.76922,68.0651,82.81964,62.44895,28.25227-3.96196,50.46991-23.63511,59.16094-48.931-.22104,.00161-.43885,.0167-.66033,.0167-2.73916,0-5.44433-.14267-8.11991-.387Z"/>
+      </svg>
     </div>
     <span class="nav-wordmark">Quintessentially</span>
   </div>
@@ -92,164 +189,215 @@
 </nav>
 
 <!-- HERO -->
-<section class="split-hero">
-  <div class="split-hero-text">
-    <h1>Live an extraordinary life — whatever that looks like to you</h1>
-    <p>Our world-leading lifestyle services are designed around you. Whatever you need, whenever you need it, our team of lifestyle managers are ready to make it happen.</p>
-    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start;">Apply for membership</a>
+<section class="home-hero">
+  <div class="home-hero-text">
+    <h1>Expect the best.<br><em>Experience better.</em></h1>
+    <p>For 25 years we have been the ultimate destination for discerning individuals and businesses seeking industry-leading concierge services worldwide. From exclusive access to travel planning, our lifestyle managers do it all with exceptional, personalised attention to detail. We don't just save you time and effort, we elevate every aspect of your life.</p>
+    <div class="home-hero-btns">
+      <a href="#enquiry" class="btn-gold">Private membership</a>
+      <a href="member-services.html" class="btn-outline-white">Corporate membership</a>
+    </div>
   </div>
-  <div class="split-hero-img">
-    <img src="https://picsum.photos/seed/nightsky/1200/800" alt="Night sky silhouette lifestyle">
+  <div class="home-hero-img">
+    <img src="https://picsum.photos/seed/luxlifestyle/1200/800" alt="Luxury lifestyle">
   </div>
 </section>
 
-<!-- FILTER BAR -->
-<div class="filter-bar">
-  <label for="lifestyle-filter">Filter:</label>
-  <select id="lifestyle-filter">
-    <option>Lifestyle services</option>
-    <option>Gifting &amp; sourcing</option>
-    <option>Everyday requests</option>
-    <option>Unique experiences</option>
-  </select>
-</div>
-
-<!-- THREE FEATURE COLUMNS -->
-<section class="feature-cols">
-  <div class="feature-col">
-    <div class="feature-col-img">
-      <img src="https://picsum.photos/seed/luxwatch/1200/800" alt="Luxury Rolex watch">
+<!-- MEMBERSHIP CARDS -->
+<section class="membership-cards">
+  <div class="membership-cards-grid">
+    <div class="mem-card">
+      <div class="mem-card-img">
+        <img src="https://picsum.photos/seed/terraceoutdoor/800/500" alt="Private membership — terrace dining">
+      </div>
+      <div class="mem-card-body">
+        <h3>Private membership</h3>
+        <p>Bespoke concierge and lifestyle management for discerning individuals seeking highly personalised, one-to-one attention. Access to the impossible, and the invaluable gift of time.</p>
+        <a href="#enquiry" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
-    <div class="feature-col-body">
-      <span class="tag tag-dark">Gifting &amp; sourcing</span>
-      <h3>Gifting and sourcing luxury items</h3>
-      <p>Whether you're searching for a limited-edition timepiece, a rare bottle of Burgundy, or the perfect gift for someone who has everything, our team will track it down. No request is too rare, no deadline too tight.</p>
-      <a href="#" class="btn-outline-dark">Learn more</a>
+    <div class="mem-card">
+      <div class="mem-card-img">
+        <img src="https://picsum.photos/seed/mountaintravel/800/500" alt="Corporate membership — travel">
+      </div>
+      <div class="mem-card-body">
+        <h3>Corporate membership</h3>
+        <p>Extending our service beyond individuals, we leverage our unique positioning to help brands and businesses better serve and connect with their audiences and staff.</p>
+        <a href="member-services.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
-  </div>
-  <div class="feature-col">
-    <div class="feature-col-img">
-      <img src="https://picsum.photos/seed/luxcar/1200/800" alt="Rolls Royce chauffeur">
-    </div>
-    <div class="feature-col-body">
-      <span class="tag tag-dark">Everyday requests</span>
-      <h3>Assisting with everyday requests</h3>
-      <p>From booking the city's most sought-after personal trainer and connecting you with an interior designer with a three-year wait list, to arranging a discreet chauffeur service — we handle the details so you don't have to.</p>
-      <a href="#" class="btn-outline-dark">Learn more</a>
-    </div>
-  </div>
-  <div class="feature-col">
-    <div class="feature-col-img">
-      <img src="https://picsum.photos/seed/desert/1200/800" alt="Camel riding desert experience">
-    </div>
-    <div class="feature-col-body">
-      <span class="tag tag-dark">Unique experiences</span>
-      <h3>Making the unique and unusual possible</h3>
-      <p>Dining on a private iceberg off the Greenland coast. A polo match played on camelback across a Moroccan desert. A private audience with a master perfumer in Grasse. Whatever you can imagine, we can make real.</p>
-      <a href="#" class="btn-outline-dark">Learn more</a>
+    <div class="mem-card">
+      <div class="mem-card-img">
+        <img src="https://picsum.photos/seed/editorial2026/800/500" alt="Editorial — Noted">
+      </div>
+      <div class="mem-card-body">
+        <h3>Editorial</h3>
+        <p>Consistently connected to the most important global happenings, Quintessentially's finger is on the pulse. Discover what's new and now worldwide with our editorial section, Noted.</p>
+        <a href="noted.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- GIFTING CAROUSEL SECTION -->
-<section class="gifting-section">
-  <div class="gifting-body">
-    <span class="tag tag-dark">Service spotlight</span>
-    <h2>Gifting and personal shopping</h2>
-    <p>Our personal shopping and gifting service combines deep luxury market knowledge with an unparalleled global network. Whether sourcing a one-of-a-kind vintage Hermès Birkin or curating a bespoke hamper for a valued client, we handle every detail from search to seamless delivery — worldwide.</p>
-    <p>We work with the world's finest ateliers, auction houses, and private dealers to secure pieces that simply can't be found elsewhere.</p>
-    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start;">Enquire about this service</a>
+<!-- MEMBERSHIP SERVICES -->
+<section class="services-section">
+  <div class="services-section-header">
+    <h2>Membership services</h2>
+    <a href="member-services.html" class="btn-dark-sm">Learn more</a>
   </div>
-  <div class="gifting-carousel">
-    <div class="gifting-carousel-img">
-      <img src="https://picsum.photos/seed/luxwatch/1200/800" alt="Luxury watch gifting">
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/safari/800/600" alt="Travel">
+      </div>
+      <div class="svc-card-body">
+        <h3>Travel</h3>
+        <p>Our award-winning in-house travel agency comprises a specialist team well versed in creating individualised itineraries to meet any and all travel dreams.</p>
+        <a href="travel.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
-    <div class="gifting-carousel-img">
-      <img src="https://picsum.photos/seed/gifting/1200/800" alt="Luxury gift box">
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/finedining/800/600" alt="Restaurants & nightlife">
+      </div>
+      <div class="svc-card-body">
+        <h3>Restaurants &amp; nightlife</h3>
+        <p>Relationships with the world's best chefs and restaurants enabling exclusive dining opportunities and special new discoveries.</p>
+        <a href="restaurants.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
-    <div class="gifting-carousel-img">
-      <img src="https://picsum.photos/seed/fashion/1200/800" alt="Fashion luxury personal shopping">
-    </div>
-    <div class="gifting-carousel-img">
-      <img src="https://picsum.photos/seed/luxcar/1200/800" alt="Luxury Rolls Royce">
-    </div>
-    <div class="carousel-nav">
-      <button aria-label="Previous">&#8592;</button>
-      <button aria-label="Next">&#8594;</button>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="cta-band-bg">
-    <img src="https://picsum.photos/seed/desert/1200/800" alt="Desert lifestyle">
-  </div>
-  <div class="cta-band-content">
-    <h2>Want to unlock access to this service?</h2>
-    <p>Become a Quintessentially member and gain access to the world's most comprehensive luxury lifestyle management service.</p>
-    <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
-  </div>
-</div>
-
-<!-- TESTIMONIAL -->
-<div class="testimonial-band">
-  <blockquote>"I'm extremely relaxed with my lifestyle manager because I know that anything I need will be looked after. They genuinely go above and beyond — it's like having the most well-connected friend in every city in the world."</blockquote>
-  <div class="testimonial-dots">
-    <span class="active"></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-
-<!-- SPECIALIST SERVICES -->
-<section class="specialist-section">
-  <h2>Our other specialist services</h2>
-  <div class="specialist-tabs">
-    <button>Travel</button>
-    <button class="active">Lifestyle</button>
-    <button>Restaurants &amp; nightlife</button>
-    <button>Exclusive access</button>
-    <button>Private events</button>
-    <button>Real estate</button>
-    <button>Education</button>
-    <button>Art</button>
-    <button>Weddings</button>
-  </div>
-  <div class="specialist-feature-card">
-    <div class="specialist-feature-card-img">
-      <img src="https://picsum.photos/seed/safari/1200/800" alt="Safari sunset travel">
-    </div>
-    <div class="specialist-feature-card-body">
-      <span class="tag">Travel</span>
-      <h3>Your passport to a world of luxury, tailor-made travel</h3>
-      <p>From bucket-list adventures to private island escapes, our travel specialists are on hand 24/7 to create itineraries that exceed every expectation. As a Virtuoso member, we unlock exclusive benefits and upgrades across the world's finest hotels and resorts.</p>
-      <a href="travel.html" class="btn-gold" style="align-self:flex-start;">Discover travel</a>
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/exclusiveaccess/800/600" alt="Exclusive access">
+      </div>
+      <div class="svc-card-body">
+        <h3>Exclusive access</h3>
+        <p>Make the most of all that life has to offer. Receive priority access to the best and most unique offerings from entertainment to sport and everything in between.</p>
+        <a href="member-services.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CLOSER BAND -->
-<div class="closer-band">
-  <div class="closer-band-bg">
-    <img src="https://picsum.photos/seed/villapool/1200/800" alt="Luxury villa pool">
+<!-- BUSINESS SERVICES -->
+<section class="services-section">
+  <div class="services-section-header">
+    <h2>Business services</h2>
+    <a href="member-services.html" class="btn-dark-sm">Learn more</a>
   </div>
-  <div class="closer-band-overlay"></div>
-  <div class="closer-band-box">
-    <h2>If it's quintessentially you, it's Quintessentially.</h2>
-    <p>Our lifestyle managers become a natural extension of your life — anticipating needs, solving problems, and opening doors to a world most people can only dream of.</p>
-    <div class="closer-band-btns">
-      <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
-      <a href="concierge-faq.html" class="btn-outline-white">Learn more</a>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/corporateservice/800/600" alt="Corporate membership">
+      </div>
+      <div class="svc-card-body">
+        <h3>Corporate membership</h3>
+        <p>Bespoke, comprehensive luxury lifestyle management for designated senior management teams with unlimited access to every aspect of our offering.</p>
+        <a href="member-services.html" class="btn-dark-sm">Learn more</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/brandevents/800/600" alt="Brand events & experiences">
+      </div>
+      <div class="svc-card-body">
+        <h3>Brand events &amp; experiences</h3>
+        <p>Quintessentially Experiences builds lasting connections between brands and their high-value audience through lifestyle events, guest management &amp; experiences, and incentives &amp; rewards.</p>
+        <a href="global.html" class="btn-dark-sm">Learn more</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-img">
+        <img src="https://picsum.photos/seed/privateevents/800/600" alt="Private events">
+      </div>
+      <div class="svc-card-body">
+        <h3>Private events</h3>
+        <p>End-to-end event and party planning for clients seeking a truly bespoke service. With offices worldwide, we create legendary events through unrivalled access and unique offerings.</p>
+        <a href="member-services.html" class="btn-dark-sm">Learn more</a>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- TESTIMONIAL BAND -->
+<div class="home-testimonial">
+  <p class="testi-label">Here's what our members have to say</p>
+  <blockquote>"We wanted to take a moment to express our heartfelt gratitude for your tireless efforts in making our trip truly exceptional. Your remarkable skill in planning our itinerary was so impressive, and your care and dedication in putting together our schedule were immensely appreciated. We firmly believe our trip wouldn't have gone as smoothly as it did without your expertise."</blockquote>
+  <div class="testi-dots">
+    <span class="active"></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
 </div>
+
+<!-- ENQUIRY FORM -->
+<section class="enquiry-section" id="enquiry">
+  <h2>Want to enquire about private membership?</h2>
+  <p>Fill out the form below.</p>
+  <p>For all other enquiries, click <a href="concierge-faq.html" class="enquiry-link">here</a>.</p>
+
+  <form class="enquiry-form" onsubmit="return false;">
+    <div class="form-row single">
+      <div class="form-field">
+        <label>Salutation</label>
+        <select>
+          <option value="">—</option>
+          <option>Mr</option><option>Mrs</option><option>Ms</option>
+          <option>Dr</option><option>Lord</option><option>Lady</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field"><label>First name *</label><input type="text"></div>
+      <div class="form-field"><label>Last name *</label><input type="text"></div>
+    </div>
+    <div class="form-row single">
+      <div class="form-field">
+        <label>Country of residence *</label>
+        <select>
+          <option value="">—</option>
+          <option>United Kingdom</option><option>United States</option>
+          <option>France</option><option>Germany</option>
+          <option>UAE</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row single">
+      <div class="form-field"><label>Email address *</label><input type="email"></div>
+    </div>
+    <div class="form-row three">
+      <div class="form-field">
+        <label>Code</label>
+        <select><option>+44</option><option>+1</option><option>+33</option><option>+49</option><option>+971</option></select>
+      </div>
+      <div class="form-field"><label>Phone number</label><input type="tel"></div>
+    </div>
+    <div class="form-row single">
+      <div class="form-field"><label>How did you hear about us?</label><input type="text"></div>
+    </div>
+    <div class="form-row single">
+      <div class="form-field">
+        <label>Let us know how we can help you… *</label>
+        <textarea rows="4"></textarea>
+      </div>
+    </div>
+    <div class="form-checkbox">
+      <input type="checkbox" id="newsletter">
+      <label for="newsletter">I would like to subscribe to Quintessentially's Noted Newsletter</label>
+    </div>
+    <div class="form-checkbox">
+      <input type="checkbox" id="terms" required>
+      <label for="terms">I confirm that I have read and agree with the <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a></label>
+    </div>
+    <p class="required-note">* Indicates required field</p>
+    <div class="form-submit"><button type="submit">Submit</button></div>
+  </form>
+</section>
 
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <span style="font-family:Helvetica;font-size:9px;letter-spacing:0.25em;color:#fff;text-transform:uppercase;">QUINTESSENTIALLY</span>
-      <p style="margin-top:1rem;">Find us on social</p>
+      <p style="margin-top:1rem;color:rgba(255,255,255,0.4);font-size:0.82rem;">Find us on social</p>
       <div class="footer-social">
         <a href="#">f</a><a href="#">ig</a><a href="#">in</a><a href="#">sp</a><a href="#">tk</a><a href="#">pt</a>
       </div>
@@ -257,17 +405,17 @@
     <div class="footer-col">
       <h5>Membership</h5>
       <ul>
-        <li><a href="#">Private membership</a></li>
-        <li><a href="#">Corporate membership</a></li>
-        <li><a href="member-services.html">Become a member</a></li>
+        <li><a href="#enquiry">Private membership</a></li>
+        <li><a href="member-services.html">Corporate membership</a></li>
+        <li><a href="#enquiry">Become a member</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
         <li><a href="member-services.html">Membership services</a></li>
-        <li><a href="#">Corporate services</a></li>
-        <li><a href="#">Events agency</a></li>
+        <li><a href="member-services.html">Corporate services</a></li>
+        <li><a href="global.html">Events agency</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -280,7 +428,7 @@
         <li><a href="#">Newsletter</a></li>
         <li><a href="concierge-faq.html">What is a concierge service?</a></li>
         <li><a href="concierge-faq.html">FAQs</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="concierge-faq.html">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -291,7 +439,7 @@
       <a href="#">Terms &amp; Conditions</a>
       <a href="#">Privacy Policy</a>
     </div>
-    <a href="#" class="btn-make-enquiry">Make an enquiry</a>
+    <a href="#enquiry" class="btn-make-enquiry">Make an enquiry</a>
   </div>
 </footer>
 
