@@ -3,342 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quintessentially — NOTED Editorial</title>
+  <title>Quintessentially — Luxury Lifestyle Management</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    /* ── PAGE-SPECIFIC ── */
     body { padding-top: 64px; }
 
-    /* HERO */
-    .noted-hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-    .noted-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: var(--black);
-    }
-    .noted-hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.45;
-    }
-    .noted-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 2rem;
-    }
-    .noted-title {
-      font-family: Georgia, serif;
-      font-size: clamp(5rem, 15vw, 14rem);
-      font-style: italic;
-      color: var(--white);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .noted-subtitle {
-      color: rgba(255,255,255,0.75);
-      font-size: clamp(14px, 1.8vw, 18px);
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.6;
-    }
-    .noted-hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* FEATURED ARTICLE STRIP */
-    .featured-strip {
+    /* GIFTING CAROUSEL SECTION */
+    .gifting-section {
       display: grid;
-      grid-template-columns: 1fr 420px;
-      background: var(--black);
-      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      background: var(--paper);
+      min-height: 480px;
     }
-    .featured-strip-body {
+    .gifting-body {
       padding: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .featured-strip-body h2 {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      color: var(--white);
+    .gifting-body h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
       margin-bottom: 1rem;
     }
-    .featured-strip-body p {
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 2rem;
-      font-size: 15px;
-      max-width: 500px;
-      line-height: 1.7;
-    }
-    .featured-strip-img {
-      height: 420px;
-      overflow: hidden;
-    }
-
-    /* SEARCH BAR */
-    .search-bar {
-      background: var(--paper);
-      padding: 1.5rem 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .search-bar input {
-      flex: 1;
-      border: 1px solid rgba(0,0,0,0.2);
-      padding: 0.55rem 1rem;
-      font-size: 14px;
-      font-family: Helvetica, Arial, sans-serif;
-      background: var(--white);
-      max-width: 380px;
-    }
-    .search-bar select {
-      border: 1px solid rgba(0,0,0,0.2);
-      padding: 0.55rem 1rem;
-      font-size: 14px;
-      font-family: Helvetica, Arial, sans-serif;
-      background: var(--white);
-      cursor: pointer;
-    }
-
-    /* ARTICLE GRID */
-    .article-grid-section {
-      padding: 4rem 3rem;
-    }
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .article-card {
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .article-card-img {
-      height: 240px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .article-card-body {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .article-card-body h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-      line-height: 1.35;
-    }
-    .article-card-body p {
+    .gifting-body p {
       color: var(--grey);
-      font-size: 13px;
-      line-height: 1.6;
-      flex: 1;
-      margin-bottom: 1rem;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      max-width: 440px;
     }
-    .article-card-body a.read-more {
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--black);
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      align-self: flex-start;
-      transition: color 0.2s;
-    }
-    .article-card-body a.read-more:hover { color: var(--gold); }
-
-    /* EDITORS PICKS */
-    .editors-picks {
-      background: #EEEBE5;
-      padding: 5rem 3rem;
-    }
-    .editors-picks h2 {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      margin-bottom: 2rem;
-    }
-    .editors-feature-card {
+    .gifting-carousel {
+      position: relative;
+      background: var(--black);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: var(--black);
+      grid-template-rows: 1fr 1fr;
+    }
+    .gifting-carousel-img {
       overflow: hidden;
-      margin-bottom: 1.5rem;
+      height: 240px;
     }
-    .editors-feature-card-img {
-      height: 400px;
-      overflow: hidden;
+    .gifting-carousel-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .editors-feature-card-body {
-      padding: 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .editors-feature-card-body h3 {
-      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-    .editors-feature-card-body p {
-      color: rgba(255,255,255,0.65);
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    .carousel-indicator {
+    .carousel-nav {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
       display: flex;
       gap: 0.5rem;
-      margin-top: 2rem;
     }
-    .carousel-indicator span {
-      display: inline-block;
-      width: 30px;
-      height: 2px;
-      background: rgba(255,255,255,0.25);
-    }
-    .carousel-indicator span.active { background: var(--gold); }
-
-    .editors-picks-row2 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .editors-picks-row2 .article-card {
-      background: var(--white);
-    }
-
-    .load-more-wrap {
-      text-align: center;
-      padding: 3rem;
-    }
-    .btn-load-more {
-      background: transparent;
-      border: 1px solid var(--black);
-      padding: 0.8rem 3rem;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-family: Helvetica, Arial, sans-serif;
+    .carousel-nav button {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      font-size: 16px;
+      transition: background 0.2s;
     }
-    .btn-load-more:hover { background: var(--black); color: var(--white); }
-    .btn-load-more:disabled { opacity: 0.4; cursor: default; }
-
-    /* NEWSLETTER */
-    .newsletter-section {
-      position: relative;
-      overflow: hidden;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .newsletter-bg {
-      position: absolute;
-      inset: 0;
-      background: var(--black);
-    }
-    .newsletter-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.35;
-    }
-    .newsletter-content {
-      position: relative;
-      z-index: 2;
-      padding: 5rem 2rem;
-      max-width: 700px;
-      width: 100%;
-    }
-    .newsletter-title {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: clamp(4rem, 10vw, 8rem);
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .newsletter-subtitle {
-      color: rgba(255,255,255,0.6);
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-    }
-    .newsletter-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .newsletter-form input,
-    .newsletter-form select {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 0.7rem 1rem;
-      color: var(--white);
-      font-size: 14px;
-      font-family: Helvetica, Arial, sans-serif;
-    }
-    .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
-    .newsletter-form .full { grid-column: 1 / -1; }
-    .newsletter-disclaimer {
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 1rem;
-      line-height: 1.5;
-    }
-
-    /* INSTAGRAM GRID */
-    .instagram-section {
-      padding: 4rem 3rem;
-      background: var(--paper);
-    }
-    .instagram-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .instagram-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 4px;
-    }
-    .instagram-grid a {
-      display: block;
-      height: 180px;
-      overflow: hidden;
-      background: var(--black);
-    }
-    .instagram-grid a img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.8;
-      transition: opacity 0.3s;
-    }
-    .instagram-grid a:hover img { opacity: 1; }
+    .carousel-nav button:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
   </style>
 </head>
 <body>
@@ -365,239 +92,158 @@
 </nav>
 
 <!-- HERO -->
-<section class="noted-hero">
-  <div class="noted-hero-bg">
-    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=80&fit=crop&crop=center" alt="Luxury restaurant interior">
+<section class="split-hero">
+  <div class="split-hero-text">
+    <h1>Live an extraordinary life — whatever that looks like to you</h1>
+    <p>Our world-leading lifestyle services are designed around you. Whatever you need, whenever you need it, our team of lifestyle managers are ready to make it happen.</p>
+    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start;">Apply for membership</a>
   </div>
-  <div class="noted-hero-content">
-    <h1 class="noted-title">NOTED</h1>
-    <p class="noted-subtitle">This is where you'll find the latest in luxury. Discover what's new and now.</p>
-    <div class="noted-hero-btns">
-      <a href="#newsletter" class="btn-gold">Sign up to Noted</a>
-      <a href="#articles" class="btn-outline-white">Discover our articles</a>
-    </div>
+  <div class="split-hero-img">
+    <img src="https://images.unsplash.com/photo-1472214103451-9374f41bce4b?w=1200&q=80&fit=crop&crop=center" alt="Night sky silhouette lifestyle">
   </div>
 </section>
 
-<!-- FEATURED STRIP -->
-<section class="featured-strip">
-  <div class="featured-strip-body">
-    <span class="tag">Restaurants &amp; nightlife</span>
-    <h2>New London restaurants</h2>
-    <p>From intimate neighbourhood bistros to grand destination dining rooms, London's restaurant scene never rests. Our editors pick the finest new openings you need to know about right now.</p>
-    <a href="#" class="btn-gold" style="align-self:flex-start;">Read article</a>
-  </div>
-  <div class="featured-strip-img">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="Fine dining plate">
-  </div>
-</section>
-
-<!-- SEARCH / FILTER BAR -->
-<div class="search-bar">
-  <input type="search" placeholder="Search articles…" aria-label="Search articles">
-  <select id="article-filter" aria-label="Filter by category">
-    <option value="all">All categories</option>
-    <option value="travel">Travel</option>
-    <option value="lifestyle">Lifestyle</option>
-    <option value="restaurants">Restaurants &amp; nightlife</option>
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <label for="lifestyle-filter">Filter:</label>
+  <select id="lifestyle-filter">
+    <option>Lifestyle services</option>
+    <option>Gifting &amp; sourcing</option>
+    <option>Everyday requests</option>
+    <option>Unique experiences</option>
   </select>
 </div>
 
-<!-- ARTICLE GRID -->
-<section class="article-grid-section" id="articles">
-  <div class="article-grid">
-
-    <article class="article-card" data-tag="travel">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80&fit=crop&crop=center" alt="Safari sunset">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Travel</span>
-        <h3>Hotel review: The Royal Madikwe beyond the Big Five</h3>
-        <p>Tucked within the 75,000-hectare Madikwe Game Reserve, The Royal Madikwe elevates the safari lodge to something altogether more extraordinary — a place where the wilderness meets genuine world-class hospitality.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card" data-tag="lifestyle">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&q=80&fit=crop&crop=center" alt="Rolls Royce luxury car">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Lifestyle</span>
-        <h3>Test drive: the Lotus Emeya 600 Sport SE</h3>
-        <p>Lotus has always made drivers of its owners. The all-electric Emeya — a hyper-GT with 905bhp and a 0–62mph sprint under 2.8 seconds — proves the marque's reinvention is as thrilling as its past glories.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card" data-tag="restaurants">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&fit=crop&crop=center" alt="Michelin restaurant">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Restaurants &amp; nightlife</span>
-        <h3>New London restaurants</h3>
-        <p>The capital's dining scene shows no sign of slowing down. From casual neighbourhood gems to spectacular destination restaurants, here are the new London restaurants making waves right now.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card" data-tag="restaurants">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="Fine dining">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Restaurants &amp; nightlife</span>
-        <h3>Caviar is everywhere in California — here's why and where to find it</h3>
-        <p>Once the preserve of Russian tsars and Parisian brasseries, caviar has found a bold new home on the California coast. We trace the trend and find the very best places to indulge.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card" data-tag="lifestyle">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80&fit=crop&crop=center" alt="Luxury watch">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Lifestyle</span>
-        <h3>Last month in luxury</h3>
-        <p>From a rare Patek Philippe that shattered auction records to the quiet opening of a hotel that has already become legendary, here is everything that mattered in the world of luxury last month.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card" data-tag="lifestyle">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop&crop=center" alt="Formula 1 race">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Lifestyle</span>
-        <h3>I was trackside for Madrid's first Formula 1 race in 45 years</h3>
-        <p>The Spanish capital roared back onto the Formula 1 calendar with a spectacular inaugural race at the new Ifema Madrid circuit. Our correspondent was there, in the very best seats, to witness history.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- EDITOR'S PICKS -->
-<section class="editors-picks">
-  <h2>Editor's picks</h2>
-
-  <div class="editors-feature-card">
-    <div class="editors-feature-card-img">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80&fit=crop&crop=center" alt="Formula 1 Madrid">
+<!-- THREE FEATURE COLUMNS -->
+<section class="feature-cols">
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80&fit=crop&crop=center" alt="Luxury Rolex watch">
     </div>
-    <div class="editors-feature-card-body">
-      <span class="tag">Lifestyle</span>
-      <h3>I was trackside for Madrid's first Formula 1 race in 45 years</h3>
-      <p>The Spanish capital roared back onto the Formula 1 calendar. We were there, in the very best hospitality suites, watching history unfold from the perfect vantage point.</p>
-      <a href="#" class="btn-gold" style="align-self:flex-start;">Read article</a>
-      <div class="carousel-indicator">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Gifting &amp; sourcing</span>
+      <h3>Gifting and sourcing luxury items</h3>
+      <p>Whether you're searching for a limited-edition timepiece, a rare bottle of Burgundy, or the perfect gift for someone who has everything, our team will track it down. No request is too rare, no deadline too tight.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
     </div>
   </div>
-
-  <div class="editors-picks-row2">
-
-    <article class="article-card">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="NYC dining">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Restaurants &amp; nightlife</span>
-        <h3>NYC's best private dining rooms</h3>
-        <p>New York's private dining scene is the city's best-kept secret. From storied Midtown institutions to hidden TriBeCa newcomers, these are the rooms where real decisions are made.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80&fit=crop&crop=center" alt="Mykonos Greece">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Travel</span>
-        <h3>A perfect day in Mykonos</h3>
-        <p>Greece's most glamorous island has refined the art of the perfect day — from a morning swim at Psarou Beach to a dinner that stretches deep into the island's mythic white-walled night.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
-    <article class="article-card">
-      <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&fit=crop&crop=center" alt="Soho London">
-      </div>
-      <div class="article-card-body">
-        <span class="tag">Restaurants &amp; nightlife</span>
-        <h3>Soho's best restaurants</h3>
-        <p>London's most vibrant neighbourhood continues to reinvent itself one restaurant at a time. We navigate the streets of Soho to bring you only the very best the area has to offer right now.</p>
-        <a href="#" class="read-more">Read more</a>
-      </div>
-    </article>
-
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&q=80&fit=crop&crop=center" alt="Rolls Royce chauffeur">
+    </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Everyday requests</span>
+      <h3>Assisting with everyday requests</h3>
+      <p>From booking the city's most sought-after personal trainer and connecting you with an interior designer with a three-year wait list, to arranging a discreet chauffeur service — we handle the details so you don't have to.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
+    </div>
+  </div>
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80&fit=crop&crop=center" alt="Camel riding desert experience">
+    </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Unique experiences</span>
+      <h3>Making the unique and unusual possible</h3>
+      <p>Dining on a private iceberg off the Greenland coast. A polo match played on camelback across a Moroccan desert. A private audience with a master perfumer in Grasse. Whatever you can imagine, we can make real.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
+    </div>
   </div>
 </section>
 
-<!-- LOAD MORE -->
-<div class="load-more-wrap">
-  <button class="btn-load-more" id="load-more">Load more articles</button>
-</div>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section" id="newsletter">
-  <div class="newsletter-bg">
-    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1600&q=80&fit=crop&crop=center" alt="Luxury hotel interior">
+<!-- GIFTING CAROUSEL SECTION -->
+<section class="gifting-section">
+  <div class="gifting-body">
+    <span class="tag tag-dark">Service spotlight</span>
+    <h2>Gifting and personal shopping</h2>
+    <p>Our personal shopping and gifting service combines deep luxury market knowledge with an unparalleled global network. Whether sourcing a one-of-a-kind vintage Hermès Birkin or curating a bespoke hamper for a valued client, we handle every detail from search to seamless delivery — worldwide.</p>
+    <p>We work with the world's finest ateliers, auction houses, and private dealers to secure pieces that simply can't be found elsewhere.</p>
+    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start;">Enquire about this service</a>
   </div>
-  <div class="newsletter-content">
-    <p class="newsletter-subtitle">The luxury editorial</p>
-    <h2 class="newsletter-title">NOTED</h2>
-    <form class="newsletter-form" onsubmit="return false;">
-      <input type="text" placeholder="First name" aria-label="First name">
-      <input type="text" placeholder="Last name" aria-label="Last name">
-      <select class="full" aria-label="Country">
-        <option value="">Country</option>
-        <option>United Kingdom</option>
-        <option>United States</option>
-        <option>United Arab Emirates</option>
-        <option>France</option>
-        <option>Germany</option>
-        <option>Switzerland</option>
-        <option>Other</option>
-      </select>
-      <input type="email" placeholder="Email address" class="full" aria-label="Email address">
-      <button type="submit" class="btn-gold full" style="padding:0.75rem;">Subscribe to NOTED</button>
-    </form>
-    <p class="newsletter-disclaimer">By subscribing you agree to receive Quintessentially's editorial newsletter. You can unsubscribe at any time. View our <a href="#" style="color:rgba(255,255,255,0.6);text-decoration:underline;">Privacy Policy</a>.</p>
+  <div class="gifting-carousel">
+    <div class="gifting-carousel-img">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&fit=crop&crop=center" alt="Luxury watch gifting">
+    </div>
+    <div class="gifting-carousel-img">
+      <img src="https://images.unsplash.com/photo-1549465220-1a629938c4ba?w=600&q=80&fit=crop&crop=center" alt="Luxury gift box">
+    </div>
+    <div class="gifting-carousel-img">
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027f1949?w=600&q=80&fit=crop&crop=center" alt="Fashion luxury personal shopping">
+    </div>
+    <div class="gifting-carousel-img">
+      <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&q=80&fit=crop&crop=center" alt="Luxury Rolls Royce">
+    </div>
+    <div class="carousel-nav">
+      <button aria-label="Previous">&#8592;</button>
+      <button aria-label="Next">&#8594;</button>
+    </div>
   </div>
 </section>
 
-<!-- MEMBERSHIP BAND -->
-<div class="membership-band">
-  <h2>Interested in becoming a member?</h2>
-  <div class="membership-band-btns">
-    <a href="member-services.html" class="btn-gold">Apply for membership</a>
-    <a href="member-services.html" class="btn-outline-white">About membership</a>
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-bg">
+    <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1600&q=80&fit=crop&crop=center" alt="Desert lifestyle">
+  </div>
+  <div class="cta-band-content">
+    <h2>Want to unlock access to this service?</h2>
+    <p>Become a Quintessentially member and gain access to the world's most comprehensive luxury lifestyle management service.</p>
+    <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
   </div>
 </div>
 
-<!-- INSTAGRAM -->
-<section class="instagram-section">
-  <h2>Follow us on Instagram</h2>
-  <div class="instagram-grid">
-    <a href="#"><img src="https://images.unsplash.com/photo-1444015045787-7d7a9e90c928?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1540962351468-9c4cfc0ee9da?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1529139574466-a303027f1949?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
+<!-- TESTIMONIAL -->
+<div class="testimonial-band">
+  <blockquote>"I'm extremely relaxed with my lifestyle manager because I know that anything I need will be looked after. They genuinely go above and beyond — it's like having the most well-connected friend in every city in the world."</blockquote>
+  <div class="testimonial-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<!-- SPECIALIST SERVICES -->
+<section class="specialist-section">
+  <h2>Our other specialist services</h2>
+  <div class="specialist-tabs">
+    <button>Travel</button>
+    <button class="active">Lifestyle</button>
+    <button>Restaurants &amp; nightlife</button>
+    <button>Exclusive access</button>
+    <button>Private events</button>
+    <button>Real estate</button>
+    <button>Education</button>
+    <button>Art</button>
+    <button>Weddings</button>
+  </div>
+  <div class="specialist-feature-card">
+    <div class="specialist-feature-card-img">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1000&q=80&fit=crop&crop=center" alt="Safari sunset travel">
+    </div>
+    <div class="specialist-feature-card-body">
+      <span class="tag">Travel</span>
+      <h3>Your passport to a world of luxury, tailor-made travel</h3>
+      <p>From bucket-list adventures to private island escapes, our travel specialists are on hand 24/7 to create itineraries that exceed every expectation. As a Virtuoso member, we unlock exclusive benefits and upgrades across the world's finest hotels and resorts.</p>
+      <a href="travel.html" class="btn-gold" style="align-self:flex-start;">Discover travel</a>
+    </div>
   </div>
 </section>
+
+<!-- CLOSER BAND -->
+<div class="closer-band">
+  <div class="closer-band-bg">
+    <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1600&q=80&fit=crop&crop=center" alt="Luxury villa pool">
+  </div>
+  <div class="closer-band-overlay"></div>
+  <div class="closer-band-box">
+    <h2>If it's quintessentially you, it's Quintessentially.</h2>
+    <p>Our lifestyle managers become a natural extension of your life — anticipating needs, solving problems, and opening doors to a world most people can only dream of.</p>
+    <div class="closer-band-btns">
+      <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
+      <a href="concierge-faq.html" class="btn-outline-white">Learn more</a>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="footer-top">

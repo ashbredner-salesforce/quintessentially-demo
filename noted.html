@@ -6,6 +6,7 @@
   <title>Quintessentially — NOTED Editorial</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
+    /* ── PAGE-SPECIFIC ── */
     body { padding-top: 64px; }
 
     /* HERO */
@@ -58,7 +59,7 @@
       flex-wrap: wrap;
     }
 
-    /* FEATURED STRIP */
+    /* FEATURED ARTICLE STRIP */
     .featured-strip {
       display: grid;
       grid-template-columns: 1fr 420px;
@@ -116,7 +117,9 @@
     }
 
     /* ARTICLE GRID */
-    .article-grid-section { padding: 4rem 3rem; }
+    .article-grid-section {
+      padding: 4rem 3rem;
+    }
     .article-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -139,8 +142,18 @@
       display: flex;
       flex-direction: column;
     }
-    .article-card-body h3 { font-size: 1.1rem; margin-bottom: 0.6rem; line-height: 1.35; }
-    .article-card-body p { color: var(--grey); font-size: 13px; line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+    .article-card-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+    .article-card-body p {
+      color: var(--grey);
+      font-size: 13px;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
     .article-card-body a.read-more {
       font-size: 12px;
       letter-spacing: 0.1em;
@@ -158,7 +171,10 @@
       background: #EEEBE5;
       padding: 5rem 3rem;
     }
-    .editors-picks h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); margin-bottom: 2rem; }
+    .editors-picks h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      margin-bottom: 2rem;
+    }
     .editors-feature-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -166,26 +182,54 @@
       overflow: hidden;
       margin-bottom: 1.5rem;
     }
-    .editors-feature-card-img { height: 400px; overflow: hidden; }
+    .editors-feature-card-img {
+      height: 400px;
+      overflow: hidden;
+    }
     .editors-feature-card-body {
       padding: 3.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .editors-feature-card-body h3 { font-size: clamp(1.4rem, 2.5vw, 2.2rem); color: var(--white); margin-bottom: 1rem; }
-    .editors-feature-card-body p { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.7; margin-bottom: 1.5rem; }
-    .carousel-indicator { display: flex; gap: 0.5rem; margin-top: 2rem; }
-    .carousel-indicator span { display: inline-block; width: 30px; height: 2px; background: rgba(255,255,255,0.25); }
+    .editors-feature-card-body h3 {
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .editors-feature-card-body p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .carousel-indicator {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .carousel-indicator span {
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background: rgba(255,255,255,0.25);
+    }
     .carousel-indicator span.active { background: var(--gold); }
+
     .editors-picks-row2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
-    .editors-picks-row2 .article-card { background: var(--white); }
-    .load-more-wrap { text-align: center; padding: 3rem; }
+    .editors-picks-row2 .article-card {
+      background: var(--white);
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      padding: 3rem;
+    }
     .btn-load-more {
       background: transparent;
       border: 1px solid var(--black);
@@ -210,23 +254,90 @@
       justify-content: center;
       text-align: center;
     }
-    .newsletter-bg { position: absolute; inset: 0; background: var(--black); }
-    .newsletter-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
-    .newsletter-content { position: relative; z-index: 2; padding: 5rem 2rem; max-width: 700px; width: 100%; }
-    .newsletter-title { font-family: Georgia, serif; font-style: italic; font-size: clamp(4rem, 10vw, 8rem); color: var(--white); line-height: 1; margin-bottom: 1rem; }
-    .newsletter-subtitle { color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2.5rem; }
-    .newsletter-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
-    .newsletter-form input, .newsletter-form select { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); padding: 0.7rem 1rem; color: var(--white); font-size: 14px; font-family: Helvetica, Arial, sans-serif; }
+    .newsletter-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+    }
+    .newsletter-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+    .newsletter-content {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 2rem;
+      max-width: 700px;
+      width: 100%;
+    }
+    .newsletter-title {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .newsletter-subtitle {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .newsletter-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .newsletter-form input,
+    .newsletter-form select {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.7rem 1rem;
+      color: var(--white);
+      font-size: 14px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
     .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
     .newsletter-form .full { grid-column: 1 / -1; }
-    .newsletter-disclaimer { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 1rem; line-height: 1.5; }
+    .newsletter-disclaimer {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
 
-    /* INSTAGRAM */
-    .instagram-section { padding: 4rem 3rem; background: var(--paper); }
-    .instagram-section h2 { font-size: 1.5rem; margin-bottom: 2rem; }
-    .instagram-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
-    .instagram-grid a { display: block; height: 180px; overflow: hidden; background: var(--black); }
-    .instagram-grid a img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+    /* INSTAGRAM GRID */
+    .instagram-section {
+      padding: 4rem 3rem;
+      background: var(--paper);
+    }
+    .instagram-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+    }
+    .instagram-grid a {
+      display: block;
+      height: 180px;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .instagram-grid a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
     .instagram-grid a:hover img { opacity: 1; }
   </style>
 </head>
@@ -303,7 +414,7 @@
       <div class="article-card-body">
         <span class="tag">Travel</span>
         <h3>Hotel review: The Royal Madikwe beyond the Big Five</h3>
-        <p>Tucked within the 75,000-hectare Madikwe Game Reserve, The Royal Madikwe elevates the safari lodge to something altogether more extraordinary — where the wilderness meets genuine world-class hospitality.</p>
+        <p>Tucked within the 75,000-hectare Madikwe Game Reserve, The Royal Madikwe elevates the safari lodge to something altogether more extraordinary — a place where the wilderness meets genuine world-class hospitality.</p>
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
@@ -327,14 +438,14 @@
       <div class="article-card-body">
         <span class="tag">Restaurants &amp; nightlife</span>
         <h3>New London restaurants</h3>
-        <p>The capital's dining scene shows no sign of slowing down. From casual neighbourhood gems to spectacular destination restaurants, here are the openings making waves right now.</p>
+        <p>The capital's dining scene shows no sign of slowing down. From casual neighbourhood gems to spectacular destination restaurants, here are the new London restaurants making waves right now.</p>
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
 
     <article class="article-card" data-tag="restaurants">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="Fine dining caviar">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="Fine dining">
       </div>
       <div class="article-card-body">
         <span class="tag">Restaurants &amp; nightlife</span>
@@ -346,19 +457,19 @@
 
     <article class="article-card" data-tag="lifestyle">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80&fit=crop&crop=center" alt="Luxury watch lifestyle">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80&fit=crop&crop=center" alt="Luxury watch">
       </div>
       <div class="article-card-body">
         <span class="tag">Lifestyle</span>
         <h3>Last month in luxury</h3>
-        <p>From a rare Patek Philippe that shattered auction records to the quiet opening of a hotel that has already become legendary, here is everything that mattered in luxury last month.</p>
+        <p>From a rare Patek Philippe that shattered auction records to the quiet opening of a hotel that has already become legendary, here is everything that mattered in the world of luxury last month.</p>
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
 
     <article class="article-card" data-tag="lifestyle">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop&crop=center" alt="Formula 1 race Madrid">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop&crop=center" alt="Formula 1 race">
       </div>
       <div class="article-card-body">
         <span class="tag">Lifestyle</span>
@@ -377,7 +488,7 @@
 
   <div class="editors-feature-card">
     <div class="editors-feature-card-img">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80&fit=crop&crop=center" alt="Formula 1 Madrid trackside">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80&fit=crop&crop=center" alt="Formula 1 Madrid">
     </div>
     <div class="editors-feature-card-body">
       <span class="tag">Lifestyle</span>
@@ -393,9 +504,10 @@
   </div>
 
   <div class="editors-picks-row2">
+
     <article class="article-card">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="NYC dining private room">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=800&q=80&fit=crop&crop=center" alt="NYC dining">
       </div>
       <div class="article-card-body">
         <span class="tag">Restaurants &amp; nightlife</span>
@@ -404,9 +516,10 @@
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
+
     <article class="article-card">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80&fit=crop&crop=center" alt="Mykonos Greece island">
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80&fit=crop&crop=center" alt="Mykonos Greece">
       </div>
       <div class="article-card-body">
         <span class="tag">Travel</span>
@@ -415,9 +528,10 @@
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
+
     <article class="article-card">
       <div class="article-card-img">
-        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&fit=crop&crop=center" alt="Soho London street restaurants">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&fit=crop&crop=center" alt="Soho London">
       </div>
       <div class="article-card-body">
         <span class="tag">Restaurants &amp; nightlife</span>
@@ -426,6 +540,7 @@
         <a href="#" class="read-more">Read more</a>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -476,11 +591,11 @@
   <h2>Follow us on Instagram</h2>
   <div class="instagram-grid">
     <a href="#"><img src="https://images.unsplash.com/photo-1444015045787-7d7a9e90c928?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1540962351468-9c4cfc0ee9da?w=400&q=80&fit=crop&crop=center" alt="Instagram post private jet"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80&fit=crop&crop=center" alt="Instagram post watch"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1529139574466-a303027f1949?w=400&q=80&fit=crop&crop=center" alt="Instagram post fashion"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&q=80&fit=crop&crop=center" alt="Instagram post villa"></a>
-    <a href="#"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80&fit=crop&crop=center" alt="Instagram post maldives"></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1540962351468-9c4cfc0ee9da?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1529139574466-a303027f1949?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80&fit=crop&crop=center" alt="Instagram post"></a>
   </div>
 </section>
 
