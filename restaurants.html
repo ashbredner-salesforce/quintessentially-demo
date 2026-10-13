@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quintessentially — Restaurants &amp; Nightlife</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body { padding-top: 64px; }
+
+    /* PULLMAN STORY SECTION */
+    .pullman-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--paper);
+    }
+    .pullman-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .pullman-images-img {
+      height: 280px;
+      overflow: hidden;
+    }
+    .pullman-images-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .pullman-body {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+    }
+    .pullman-body h2 {
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      margin-bottom: 1rem;
+    }
+    .pullman-body p {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .pullman-body p strong {
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+    </div>
+    <span class="nav-wordmark">Quintessentially</span>
+  </div>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="index.html">Membership</a></li>
+    <li class="has-drop"><a href="member-services.html">What we do</a></li>
+    <li><a href="global.html">Events agency</a></li>
+    <li class="has-drop"><a href="global.html">About us</a></li>
+    <li><a href="noted.html">Editorial</a></li>
+    <li><a href="concierge-faq.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-request">Request a call</button>
+    <a href="#" class="nav-login">Login →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="split-hero">
+  <div class="split-hero-text">
+    <h1>Secure your seat at the most sought-after tables</h1>
+    <p>Our team's specialist knowledge, worldwide network of relationships, and genuine passion for great food and drink means your table is always ready — wherever in the world you are.</p>
+    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start;">Apply for membership</a>
+  </div>
+  <div class="split-hero-img">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=1200&q=80&fit=crop&crop=center" alt="Fine dining overhead table">
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <label for="restaurants-filter">Filter:</label>
+  <select id="restaurants-filter">
+    <option>Restaurants &amp; nightlife</option>
+    <option>Dining events</option>
+    <option>Reservations</option>
+    <option>Nightlife</option>
+  </select>
+</div>
+
+<!-- THREE FEATURE COLUMNS -->
+<section class="feature-cols">
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1539635278872-0e7c5e1f4d5f?w=800&q=80&fit=crop&crop=center" alt="Exclusive dining event desert tents">
+    </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Exclusive dining events</span>
+      <h3>Your seat at exclusive dining events</h3>
+      <p>Invitations to members-only supper clubs, curated culinary events with world-renowned chefs, and private dinners in the world's most spectacular settings — from private wine cellars in Burgundy to rooftop dining above the clouds.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
+    </div>
+  </div>
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&fit=crop&crop=center" alt="Michelin restaurant interior">
+    </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Reservations</span>
+      <h3>Restaurant recommendations and reservations</h3>
+      <p>We stay ahead of every opening, closure, and chef move so you never miss a moment. Our team has genuine relationships with restaurants around the world — giving our members access to tables others simply can't get.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
+    </div>
+  </div>
+  <div class="feature-col">
+    <div class="feature-col-img">
+      <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&fit=crop&crop=center" alt="Nightlife London street">
+    </div>
+    <div class="feature-col-body">
+      <span class="tag tag-dark">Nightlife</span>
+      <h3>In-the-know nightlife hotspots</h3>
+      <p>Beyond the restaurant, our team navigates the world of supper clubs, speakeasies, natural wine bars, and invitation-only parties — always ensuring you're exactly where you should be, the moment you should be there.</p>
+      <a href="#" class="btn-outline-dark">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- PULLMAN STORY -->
+<section class="pullman-section">
+  <div class="pullman-images">
+    <div class="pullman-images-img">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=600&q=80&fit=crop&crop=center" alt="British Pullman dining">
+    </div>
+    <div class="pullman-images-img">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80&fit=crop&crop=center" alt="Michelin dining experience">
+    </div>
+    <div class="pullman-images-img">
+      <img src="https://images.unsplash.com/photo-1539635278872-0e7c5e1f4d5f?w=600&q=80&fit=crop&crop=center" alt="Luxury event dining">
+    </div>
+    <div class="pullman-images-img">
+      <img src="https://images.unsplash.com/photo-1444015045787-7d7a9e90c928?w=600&q=80&fit=crop&crop=center" alt="Supper club night">
+    </div>
+  </div>
+  <div class="pullman-body">
+    <span class="tag tag-dark">Member story</span>
+    <h2>An evening on board the British Pullman for The Supper Club</h2>
+    <p>Few settings in the world combine history, motion, and culinary artistry quite like the British Pullman. For one remarkable evening, Quintessentially arranged a private takeover of two of the train's storied carriages for an intimate group of members.</p>
+    <p>The five-course menu was created by <strong>Michelin-starred chef Nieves Barragán Mohacho</strong>, served with <strong>Dom Pérignon 2013</strong> as the locomotive glided through the English countryside at dusk — the golden light of the dining car matching the champagne in every glass.</p>
+    <p>It was, by all accounts, one of those evenings that becomes a story told for years. Quintessentially arranged every detail: the guest list, the carriage décor, the chef's brief, the wine selection, and the seamless transfers before and after.</p>
+    <a href="member-services.html#enquiry" class="btn-gold" style="align-self:flex-start; margin-top:1rem;">Enquire about this service</a>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-bg">
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=80&fit=crop&crop=center" alt="Luxury restaurant">
+  </div>
+  <div class="cta-band-content">
+    <h2>Want to unlock access to this service?</h2>
+    <p>Become a Quintessentially member and never miss a table again.</p>
+    <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial-band">
+  <blockquote>"Having this membership is the best money I spend every year. Thank you for all your help — I genuinely don't know how I managed dinner reservations before you."</blockquote>
+  <div class="testimonial-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<!-- SPECIALIST SERVICES -->
+<section class="specialist-section">
+  <h2>Our other specialist services</h2>
+  <div class="specialist-tabs">
+    <button>Travel</button>
+    <button>Lifestyle</button>
+    <button class="active">Restaurants &amp; nightlife</button>
+    <button>Exclusive access</button>
+    <button>Private events</button>
+    <button>Real estate</button>
+    <button>Education</button>
+    <button>Art</button>
+    <button>Weddings</button>
+  </div>
+  <div class="specialist-feature-card">
+    <div class="specialist-feature-card-img">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1000&q=80&fit=crop&crop=center" alt="Safari sunset travel">
+    </div>
+    <div class="specialist-feature-card-body">
+      <span class="tag">Travel</span>
+      <h3>Your passport to a world of luxury, tailor-made travel</h3>
+      <p>From bucket-list adventures to private island escapes, our travel specialists are on hand 24/7 to create itineraries that exceed every expectation.</p>
+      <a href="travel.html" class="btn-gold" style="align-self:flex-start;">Discover travel</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSER BAND -->
+<div class="closer-band">
+  <div class="closer-band-bg">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a02e84?w=1600&q=80&fit=crop&crop=center" alt="Fine dining closer">
+  </div>
+  <div class="closer-band-overlay"></div>
+  <div class="closer-band-box">
+    <h2>If it's quintessentially you, it's Quintessentially.</h2>
+    <p>Our restaurant specialists have a genuine passion for great food, drink, and the moments that make a great meal unforgettable. Let us find your next favourite table.</p>
+    <div class="closer-band-btns">
+      <a href="member-services.html#enquiry" class="btn-gold">Apply for membership</a>
+      <a href="concierge-faq.html" class="btn-outline-white">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span style="font-family:Helvetica;font-size:9px;letter-spacing:0.25em;color:#fff;text-transform:uppercase;">QUINTESSENTIALLY</span>
+      <p style="margin-top:1rem;">Find us on social</p>
+      <div class="footer-social">
+        <a href="#">f</a><a href="#">ig</a><a href="#">in</a><a href="#">sp</a><a href="#">tk</a><a href="#">pt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Membership</h5>
+      <ul>
+        <li><a href="#">Private membership</a></li>
+        <li><a href="#">Corporate membership</a></li>
+        <li><a href="member-services.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="member-services.html">Membership services</a></li>
+        <li><a href="#">Corporate services</a></li>
+        <li><a href="#">Events agency</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Supplier Code of Conduct</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Website Privacy Notice</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="concierge-faq.html">What is a concierge service?</a></li>
+        <li><a href="concierge-faq.html">FAQs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Quintessentially.com © 2026 All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Supplier Code of Conduct</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <a href="#" class="btn-make-enquiry">Make an enquiry</a>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

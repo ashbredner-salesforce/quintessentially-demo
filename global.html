@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quintessentially — Global Offices</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body { padding-top: 64px; }
+
+    /* GLOBAL HERO */
+    .global-hero {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      min-height: 70vh;
+      padding-top: 0;
+    }
+    .global-hero-text {
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3rem;
+    }
+    .global-hero-text h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .global-hero-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .global-hero-map {
+      overflow: hidden;
+    }
+    .global-hero-map img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* OFFICES GRID */
+    .offices-section {
+      padding: 4rem 3rem;
+      background: var(--paper);
+    }
+    .offices-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .office-card {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      overflow: hidden;
+      min-height: 160px;
+    }
+    .office-card-img {
+      overflow: hidden;
+    }
+    .office-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .office-card-body {
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .office-card-body .office-country {
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--black);
+      margin-bottom: 0.25rem;
+    }
+    .office-card-body .office-city {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 0.5rem;
+    }
+    .office-card-body .office-phone {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 1rem;
+    }
+    .office-card-body .btn-learn-more {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.45rem 1.2rem;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: Helvetica, Arial, sans-serif;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .office-card-body .btn-learn-more:hover { background: var(--gold); color: var(--black); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+    </div>
+    <span class="nav-wordmark">Quintessentially</span>
+  </div>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="index.html">Membership</a></li>
+    <li class="has-drop"><a href="member-services.html">What we do</a></li>
+    <li><a href="global.html">Events agency</a></li>
+    <li class="has-drop"><a href="global.html">About us</a></li>
+    <li><a href="noted.html">Editorial</a></li>
+    <li><a href="concierge-faq.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-request">Request a call</button>
+    <a href="#" class="nav-login">Login →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="global-hero">
+  <div class="global-hero-text">
+    <h1>Global mindset. Local expertise.</h1>
+    <p>More than 35 offices around the world, served by a global network of lifestyle managers and luxury specialists on-hand 24/7/365, and armed with deep, pointed local knowledge and 51 languages between them.</p>
+    <p style="margin-top:1.5rem;">Wherever you are in the world, a Quintessentially team is nearby — ready to open the right doors.</p>
+  </div>
+  <div class="global-hero-map">
+    <img src="https://images.unsplash.com/photo-1526778808165-2a4212ccc98c?w=1400&q=80" alt="World map global offices">
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <label for="offices-filter">Filter:</label>
+  <select id="offices-filter">
+    <option>All partner offices</option>
+    <option>Europe</option>
+    <option>Middle East</option>
+    <option>Americas</option>
+    <option>Asia Pacific</option>
+    <option>Africa</option>
+  </select>
+</div>
+
+<!-- OFFICES GRID -->
+<section class="offices-section">
+  <div class="offices-grid">
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80&fit=crop&crop=center" alt="London Tower Bridge">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">United Kingdom</p>
+          <p class="office-city">London — Global Headquarters</p>
+          <p class="office-phone">+44 20 3073 6600</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?beirut,night?w=400&q=80&fit=crop&crop=center" alt="Beirut night skyline">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Lebanon</p>
+          <p class="office-city">Beirut</p>
+          <p class="office-phone">+961 1 760 525</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?paris,eiffel?w=400&q=80&fit=crop&crop=center" alt="Paris France">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">France</p>
+          <p class="office-city">Paris</p>
+          <p class="office-phone">+33 1 76 41 06 20</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?milan,italy?w=400&q=80&fit=crop&crop=center" alt="Milan Italy">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Italy</p>
+          <p class="office-city">Milan</p>
+          <p class="office-phone">+39 02 3056 5800</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?dubai,skyline?w=400&q=80&fit=crop&crop=center" alt="Dubai UAE skyline">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">UAE</p>
+          <p class="office-city">Dubai</p>
+          <p class="office-phone">+971 4 372 4900</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?new+york,manhattan?w=400&q=80&fit=crop&crop=center" alt="New York City skyline">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">USA</p>
+          <p class="office-city">New York</p>
+          <p class="office-phone">+1 212 220 8400</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?madrid,spain?w=400&q=80&fit=crop&crop=center" alt="Madrid Spain">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Spain</p>
+          <p class="office-city">Madrid</p>
+          <p class="office-phone">+34 91 310 5151</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?athens,greece?w=400&q=80&fit=crop&crop=center" alt="Athens Greece">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Greece</p>
+          <p class="office-city">Athens</p>
+          <p class="office-phone">+30 210 724 2900</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?geneva,switzerland,lake?w=400&q=80&fit=crop&crop=center" alt="Geneva Switzerland">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Switzerland</p>
+          <p class="office-city">Geneva</p>
+          <p class="office-phone">+41 22 365 1070</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+    <div class="office-card">
+      <div class="office-card-img">
+        <img src="https://source.unsplash.com/featured/?berlin,germany?w=400&q=80&fit=crop&crop=center" alt="Berlin Germany">
+      </div>
+      <div class="office-card-body">
+        <div>
+          <p class="office-country">Germany</p>
+          <p class="office-city">Berlin</p>
+          <p class="office-phone">+49 30 2096 1820</p>
+        </div>
+        <a href="#" class="btn-learn-more">Learn more</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span style="font-family:Helvetica;font-size:9px;letter-spacing:0.25em;color:#fff;text-transform:uppercase;">QUINTESSENTIALLY</span>
+      <p style="margin-top:1rem;">Find us on social</p>
+      <div class="footer-social">
+        <a href="#">f</a><a href="#">ig</a><a href="#">in</a><a href="#">sp</a><a href="#">tk</a><a href="#">pt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Membership</h5>
+      <ul>
+        <li><a href="#">Private membership</a></li>
+        <li><a href="#">Corporate membership</a></li>
+        <li><a href="member-services.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="member-services.html">Membership services</a></li>
+        <li><a href="#">Corporate services</a></li>
+        <li><a href="#">Events agency</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Supplier Code of Conduct</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Website Privacy Notice</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="concierge-faq.html">What is a concierge service?</a></li>
+        <li><a href="concierge-faq.html">FAQs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Quintessentially.com © 2026 All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Supplier Code of Conduct</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <a href="#" class="btn-make-enquiry">Make an enquiry</a>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

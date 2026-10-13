@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quintessentially — What is a concierge service?</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    body { padding-top: 64px; }
+
+    /* TOC */
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+    .faq-toc {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+    }
+    .faq-toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 1.2rem;
+    }
+    .faq-toc ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+    }
+    .faq-toc ul li a {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.4;
+      transition: color 0.2s;
+      display: block;
+    }
+    .faq-toc ul li a:hover { color: var(--gold); }
+    .faq-toc ul li a::before {
+      content: attr(data-num) ". ";
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    /* FAQ ITEMS */
+    .faq-items { }
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 3rem 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-number {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 0.75rem;
+    }
+    .faq-item h2 {
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      margin-bottom: 1.2rem;
+      color: var(--black);
+    }
+    .faq-item p {
+      color: var(--grey);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    /* CTA BAND */
+    .faq-cta-band {
+      background: var(--black);
+      padding: 6rem 4rem;
+      text-align: center;
+    }
+    .faq-cta-band h2 {
+      color: var(--white);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      margin-bottom: 1.5rem;
+    }
+    .faq-cta-band p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+    </div>
+    <span class="nav-wordmark">Quintessentially</span>
+  </div>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="index.html">Membership</a></li>
+    <li class="has-drop"><a href="member-services.html">What we do</a></li>
+    <li><a href="global.html">Events agency</a></li>
+    <li class="has-drop"><a href="global.html">About us</a></li>
+    <li><a href="noted.html">Editorial</a></li>
+    <li><a href="concierge-faq.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-request">Request a call</button>
+    <a href="#" class="nav-login">Login →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.unsplash.com/photo-1539635278872-0e7c5e1f4d5f?w=1600&q=80&fit=crop&crop=center" alt="Luxury desert boat">
+  </div>
+  <div class="page-hero-content">
+    <h1>What is a concierge service?</h1>
+    <p>Everything you need to know about concierge services, lifestyle management, and what makes Quintessentially the world's leading luxury lifestyle management group.</p>
+    <a href="member-services.html#enquiry" class="btn-gold">Get in touch</a>
+  </div>
+</section>
+
+<!-- FAQ LAYOUT -->
+<div class="faq-layout">
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="faq-toc">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#q1" data-num="1">What is a concierge service?</a></li>
+      <li><a href="#q2" data-num="2">Is a hotel concierge the same thing?</a></li>
+      <li><a href="#q3" data-num="3">Who is a concierge service for?</a></li>
+      <li><a href="#q4" data-num="4">What is a concierge service for?</a></li>
+      <li><a href="#q5" data-num="5">What types of concierge services are there?</a></li>
+      <li><a href="#q6" data-num="6">What is an AI concierge?</a></li>
+      <li><a href="#q7" data-num="7">What is luxury lifestyle management?</a></li>
+      <li><a href="#q8" data-num="8">What is a lifestyle manager?</a></li>
+      <li><a href="#q9" data-num="9">What does a lifestyle manager do?</a></li>
+    </ul>
+  </aside>
+
+  <!-- FAQ ITEMS -->
+  <main class="faq-items">
+
+    <article class="faq-item" id="q1">
+      <p class="faq-number">01</p>
+      <h2>What is a concierge service?</h2>
+      <p>A concierge is an individual or organisation that provides highly personalised services, handling their client's every need — no matter how big or small. Available 24 hours a day, 7 days a week, 365 days a year, a concierge service takes care of everything from planning complex international travel itineraries to booking restaurant reservations at the world's most sought-after tables. At its best, a great concierge service doesn't just fulfil requests — it anticipates needs before they arise.</p>
+    </article>
+
+    <article class="faq-item" id="q2">
+      <p class="faq-number">02</p>
+      <h2>Is a hotel concierge the same thing?</h2>
+      <p>There are meaningful similarities between a hotel concierge and a lifestyle concierge service — both are there to help, both run errands, both make bookings. But the comparison only goes so far. A hotel concierge enhances a guest's experience during a specific stay, within a single property's limits. A lifestyle concierge service, by contrast, elevates every aspect of a client's life — whether they're at home, at work, or abroad. It's the difference between a short-term service and a long-term relationship built on deep personal knowledge and genuine trust.</p>
+    </article>
+
+    <article class="faq-item" id="q3">
+      <p class="faq-number">03</p>
+      <h2>Who is a concierge service for?</h2>
+      <p>A concierge service is a solution for individuals with busy schedules who need expert help managing day-to-day responsibilities. Whether you're a C-suite executive with no time to spare, a high-net-worth individual who simply wants the best of everything, or a family that wants to ensure every holiday and occasion is perfectly planned — offloading tiresome, time-consuming tasks creates more space to focus on what truly matters. Our members are people who value their time above all else.</p>
+    </article>
+
+    <article class="faq-item" id="q4">
+      <p class="faq-number">04</p>
+      <h2>What is a concierge service for?</h2>
+      <p>A concierge service assists with anything that makes everyday life easier, more enjoyable, and more efficient. This includes stress-free personal shopping, administrative tasks, coordinating complex travel arrangements across multiple destinations, organising calendars and social schedules, securing hard-to-find tickets, managing property, and much, much more. The best concierge services remove friction from life and replace it with seamless, elegant solutions.</p>
+    </article>
+
+    <article class="faq-item" id="q5">
+      <p class="faq-number">05</p>
+      <h2>What different types of concierge services are there?</h2>
+      <p>There are many different types of concierge service, each specialising in a different area of life. Travel concierge services handle all aspects of leisure and business travel, from flights to hotels to private transfers. Dining concierge services focus on restaurant reservations and access to exclusive culinary events. Event concierge services coordinate everything from milestone celebrations to corporate gatherings. Property concierge services manage luxury residences. And lifestyle concierge services — like Quintessentially — bring all of these capabilities together under one roof, with a single point of contact who truly knows you.</p>
+    </article>
+
+    <article class="faq-item" id="q6">
+      <p class="faq-number">06</p>
+      <h2>What is an AI concierge?</h2>
+      <p>An AI concierge is the virtual version of a personal assistant — responding to requests using advanced algorithms, machine learning, and natural language processing. AI concierge technology can manage a wide range of straightforward tasks efficiently and at scale. However, it cannot provide the same personalised, high-touch service as a skilled human concierge. When it comes to navigating complex situations, building genuine relationships with the world's best hotels and restaurants, or exercising nuanced judgement about what a particular client will truly love — human expertise remains irreplaceable.</p>
+    </article>
+
+    <article class="faq-item" id="q7">
+      <p class="faq-number">07</p>
+      <h2>What is luxury lifestyle management?</h2>
+      <p>Luxury lifestyle management is a high-end, comprehensive personal service that combines traditional concierge with access you simply cannot get anywhere else. This means sourcing limited-edition luxury items before they reach the open market, securing sold-out tickets to the most sought-after events in the world, arranging VIP access to private collections and exclusive experiences, and managing every aspect of a client's personal and professional life with discretion and unparalleled expertise. Quintessentially pioneered luxury lifestyle management in 2000, and has spent 25 years refining the art.</p>
+    </article>
+
+    <article class="faq-item" id="q8">
+      <p class="faq-number">08</p>
+      <h2>What is a lifestyle manager?</h2>
+      <p>A lifestyle manager is an individual who manages lifestyles. Similar in some respects to a personal assistant, they save their clients' time by taking care of every aspect of their life — but they go considerably beyond traditional executive support. A great lifestyle manager makes the impossible possible. They anticipate needs before they're voiced, they understand your preferences intimately, they have relationships across every sector of the luxury world, and they are, at their best, an extension of you — operating quietly and expertly on your behalf.</p>
+    </article>
+
+    <article class="faq-item" id="q9">
+      <p class="faq-number">09</p>
+      <h2>What does a lifestyle manager do?</h2>
+      <p>The answer is, in practice, almost limitless. A Quintessentially lifestyle manager essentially becomes their client's lifeline — going the extra mile in every direction to ensure their clients experience the very best the world has to offer. This ranges from booking at the world's top restaurants (including those that claim to have no availability) and securing spots on invite-only guest lists, to resolving last-minute travel emergencies, hunting down the rarest items on earth, and creating experiences that simply don't exist until they make them happen. There is no request too large, too unusual, or too last-minute.</p>
+    </article>
+
+  </main>
+</div>
+
+<!-- FAQ CTA BAND -->
+<section class="faq-cta-band">
+  <h2>We're the world's leading luxury lifestyle management group</h2>
+  <p>Founded in London in 2000, Quintessentially has spent 25 years building the most comprehensive network in the luxury world. Today we operate from more than 35 offices across six continents, with a team of dedicated lifestyle managers who speak 51 languages and share a single obsession: making the extraordinary ordinary for our members.</p>
+  <p>Whatever you need — whether it's a table at a three-Michelin-starred restaurant in Tokyo or a private jet to the Maldives for tomorrow morning — we are ready.</p>
+  <a href="member-services.html#enquiry" class="btn-gold">Discover membership</a>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="enquiry-section" id="enquiry">
+  <div class="container">
+    <h2>Want to enquire about private membership?</h2>
+    <p>Fill out the form below and a member of our team will be in touch shortly.</p>
+    <form class="enquiry-form" onsubmit="return false;">
+      <div>
+        <label for="salutation-faq">Salutation</label>
+        <select id="salutation-faq">
+          <option value="">Please select</option>
+          <option>Mr</option>
+          <option>Mrs</option>
+          <option>Ms</option>
+          <option>Dr</option>
+          <option>Lord</option>
+          <option>Lady</option>
+        </select>
+      </div>
+      <div></div>
+      <div>
+        <label for="first-name-faq">First name</label>
+        <input type="text" id="first-name-faq" placeholder="First name">
+      </div>
+      <div>
+        <label for="last-name-faq">Last name</label>
+        <input type="text" id="last-name-faq" placeholder="Last name">
+      </div>
+      <div>
+        <label for="country-faq">Country of residence</label>
+        <select id="country-faq">
+          <option value="">Please select</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>United Arab Emirates</option>
+          <option>France</option>
+          <option>Germany</option>
+          <option>Switzerland</option>
+          <option>Italy</option>
+          <option>Spain</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="email-faq">Email</label>
+        <input type="email" id="email-faq" placeholder="Email address">
+      </div>
+      <div>
+        <label for="phone-faq">Phone</label>
+        <input type="tel" id="phone-faq" placeholder="+44 (0) 20 3073 6600">
+      </div>
+      <div>
+        <label for="heard-faq">How did you hear about us?</label>
+        <select id="heard-faq">
+          <option value="">Please select</option>
+          <option>Word of mouth</option>
+          <option>Google search</option>
+          <option>Social media</option>
+          <option>Press coverage</option>
+          <option>Existing member</option>
+          <option>Hotel or brand partner</option>
+        </select>
+      </div>
+      <div class="full-width">
+        <label for="message-faq">Let us know how we can help</label>
+        <textarea id="message-faq" placeholder="Tell us a little about yourself and what you're looking for…"></textarea>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="newsletter-check-faq">
+        <label for="newsletter-check-faq" style="text-transform:none;letter-spacing:0;font-size:12px;color:var(--grey);">I'd like to receive the Quintessentially newsletter and editorial updates (NOTED).</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="terms-check-faq">
+        <label for="terms-check-faq" style="text-transform:none;letter-spacing:0;font-size:12px;color:var(--grey);">I have read and agree to Quintessentially's <a href="#" style="color:var(--black);text-decoration:underline;">Terms &amp; Conditions</a> and <a href="#" style="color:var(--black);text-decoration:underline;">Privacy Policy</a>.</label>
+      </div>
+      <div class="full-width">
+        <button type="submit" class="btn-gold">Submit enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span style="font-family:Helvetica;font-size:9px;letter-spacing:0.25em;color:#fff;text-transform:uppercase;">QUINTESSENTIALLY</span>
+      <p style="margin-top:1rem;">Find us on social</p>
+      <div class="footer-social">
+        <a href="#">f</a><a href="#">ig</a><a href="#">in</a><a href="#">sp</a><a href="#">tk</a><a href="#">pt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Membership</h5>
+      <ul>
+        <li><a href="#">Private membership</a></li>
+        <li><a href="#">Corporate membership</a></li>
+        <li><a href="member-services.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="member-services.html">Membership services</a></li>
+        <li><a href="#">Corporate services</a></li>
+        <li><a href="#">Events agency</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Supplier Code of Conduct</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Website Privacy Notice</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="concierge-faq.html">What is a concierge service?</a></li>
+        <li><a href="concierge-faq.html">FAQs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Quintessentially.com © 2026 All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Supplier Code of Conduct</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <a href="#" class="btn-make-enquiry">Make an enquiry</a>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
